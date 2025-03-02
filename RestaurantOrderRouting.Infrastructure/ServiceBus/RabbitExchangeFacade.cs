@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
-using RestaurantOrderRouting.Domain.Entities;
+using RestaurantOrderRouting.Domain.Domain.Entities;
 using System.Text;
 using System.Threading.Channels;
 
@@ -32,7 +32,6 @@ namespace RestaurantOrderRouting.Infrastructure.ServiceBus
                 properties.Persistent = true;
                 channel.BasicPublish(item.Exchange, item.RouteKey, basicProperties: properties, body: messageBody);
             }
-
         }       
     }
 }

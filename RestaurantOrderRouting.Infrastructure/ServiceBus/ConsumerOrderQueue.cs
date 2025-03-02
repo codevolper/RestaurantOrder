@@ -1,4 +1,4 @@
-﻿using RestaurantOrderRouting.Domain.Interfaces.Services;
+﻿using RestaurantOrderRouting.Domain.Application.Interfaces;
 
 namespace RestaurantOrderRouting.Infrastructure.ServiceBus
 {

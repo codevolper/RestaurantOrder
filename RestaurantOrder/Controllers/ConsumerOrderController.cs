@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestaurantOrderRouting.Domain.Interfaces.Services;
+using RestaurantOrderRouting.Domain.Application.Interfaces;
 
 namespace RestaurantOrderRouting.Api.Controllers
 {
