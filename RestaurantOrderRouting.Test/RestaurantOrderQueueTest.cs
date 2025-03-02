@@ -1,4 +1,5 @@
-using RestaurantOrderRouting.Domain.Entities;
+using RestaurantOrderRouting.Domain.Domain.Entities;
+using RestaurantOrderRouting.Infrastructure.Repositories;
 using RestaurantOrderRouting.Infrastructure.ServiceBus;
 using System.Collections.Generic;
 
@@ -10,7 +11,7 @@ namespace RestaurantOrderRouting.Test
         public void PublishAnOrderToQueueDevTest()
         {
             ProducerOrderQueue producer = new();
-            producer.PublishAnOrderToQueue(
+            producer.PublishAnOrderMessage(
                 _ = new Order()
                 {
                     Description = "Publisher Message Queue",

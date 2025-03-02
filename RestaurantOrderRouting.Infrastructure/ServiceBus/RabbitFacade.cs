@@ -1,5 +1,5 @@
 ﻿using RabbitMQ.Client;
-using RestaurantOrderRouting.Domain.Entities;
+using RestaurantOrderRouting.Domain.Domain.Entities;
 using System.Text;
 
 namespace RestaurantOrderRouting.Infrastructure.ServiceBus

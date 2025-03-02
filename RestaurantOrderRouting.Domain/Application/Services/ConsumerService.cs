@@ -1,6 +1,6 @@
-﻿using RestaurantOrderRouting.Domain.Entities;
+﻿using RestaurantOrderRouting.Domain.Domain.Entities;
 
-namespace RestaurantOrderRouting.Domain.Services
+namespace RestaurantOrderRouting.Domain.Application.Services
 {
     public class ConsumerService
     {
