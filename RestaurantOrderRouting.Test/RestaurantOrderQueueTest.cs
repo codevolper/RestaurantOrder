@@ -1,7 +1,6 @@
 using RestaurantOrderRouting.Domain.Domain.Entities;
 using RestaurantOrderRouting.Infrastructure.Repositories;
 using RestaurantOrderRouting.Infrastructure.ServiceBus;
-using System.Collections.Generic;
 
 namespace RestaurantOrderRouting.Test
 {

@@ -11,9 +11,9 @@ namespace RestaurantOrderRouting.Infrastructure.Repositories
             RabbitFacade.SendMessageToQueue(order);
         }
 
-        //public void PublishAnOrderExchangeStack(Order order)
-        //{
-        //    RabbitExchangeFacade.PublishExchangeMessage(order);
-        //}       
+        public void PublishAnOrderExchangeStack(Order order)
+        {
+            RabbitExchangeFacade.PublishExchangeMessage(order);
+        }
     }
 }

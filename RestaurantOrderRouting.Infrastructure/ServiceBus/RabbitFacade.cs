@@ -15,9 +15,10 @@ namespace RestaurantOrderRouting.Infrastructure.ServiceBus
             PublishMessageInQueue(order.PrepareOrderDetails());
         }
 
-        public async static Task<string> GetMessageInQueue()
-        {           
-            return await ConsumeMessageInQueue();
+        public static string GetMessageInQueue()
+        {
+            InitializeQueueConnection();
+            return ConsumeMessageInQueue();
         }
 
         #region Private methods
@@ -49,13 +50,10 @@ namespace RestaurantOrderRouting.Infrastructure.ServiceBus
                                  body: body);
         }
 
-        private async static Task<string> ConsumeMessageInQueue()
+        private static string ConsumeMessageInQueue()
         {            
             var queueReturn = Channel.BasicGet("route-order", false);
-            var body = queueReturn.Body.ToArray();
-
-            await Task.CompletedTask;
-
+            var body = queueReturn.Body.ToArray();     
             return Encoding.UTF8.GetString(body);
         }
 

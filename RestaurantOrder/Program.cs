@@ -1,4 +1,3 @@
-using RestaurantOrderRouting.Api;
 using RestaurantOrderRouting.Domain.Application.Interfaces;
 using RestaurantOrderRouting.Domain.Application.Services;
 using RestaurantOrderRouting.Domain.Domain.Interfaces;
@@ -16,9 +15,12 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddHostedService<ConsumerBackgroundService>();
 
 // Dependecy Injection - How the project is small, I put the dependency injection directly here
+// Producer D.I
 builder.Services.AddScoped<IProducerOrderService, ProducerService>();
 builder.Services.AddScoped<IProducerRepository, ProducerOrderQueue>();
-//builder.Services.AddScoped<IConsumerOrderService, ConsumerOrderQueue>();
+// Consumer D.I
+builder.Services.AddScoped<IConsumerOrderService, ConsumerService>();
+builder.Services.AddScoped<IConsumerRepository, ConsumerOrderQueue>();
 
 var app = builder.Build();
 

@@ -1,4 +1,6 @@
-﻿namespace RestaurantOrderRouting.Domain.Domain.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace RestaurantOrderRouting.Domain.Domain.Entities
 {
     public class Order
     {
@@ -6,6 +8,7 @@
 
         public IList<string> Items { get; set; } = [];
 
+        [JsonIgnore]
         public IList<Items> FoodItem { get; set; } = [];
 
         public string PrepareOrderDetails()

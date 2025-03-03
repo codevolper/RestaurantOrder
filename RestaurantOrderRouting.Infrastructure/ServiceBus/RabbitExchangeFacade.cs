@@ -2,7 +2,6 @@
 using RabbitMQ.Client;
 using RestaurantOrderRouting.Domain.Domain.Entities;
 using System.Text;
-using System.Threading.Channels;
 
 namespace RestaurantOrderRouting.Infrastructure.ServiceBus
 {

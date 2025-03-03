@@ -2,6 +2,6 @@
 {
     public interface IConsumerOrderService : IOrderService
     {
-        Task<string> ConsumerAnOrderInQueue();
+        string ConsumerAnOrderInQueue();
     }
 }
