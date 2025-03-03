@@ -8,10 +8,12 @@ namespace RestaurantOrderRouting.Controllers
     [Route("[controller]")]
     public class ProducerOrderController(ILogger<ProducerOrderController> logger, IProducerOrderService orderService) : ControllerBase
     {
+        #region Private properties
         private readonly ILogger<ProducerOrderController> _logger = logger;
 
         private readonly IProducerOrderService _orderService = orderService;
-        
+        #endregion
+
         [HttpPost(Name = "SendAnOrder")]
         public async Task TargetARequest([FromBody] Order order)
         {
@@ -24,8 +26,8 @@ namespace RestaurantOrderRouting.Controllers
 
         //[HttpPost(Name = "SendAnOrderToStacks")]
         //public async Task PublishOrderToQueue([FromBody] Order order)
-        //{            
-        //    _orderService.PublishAnOrderExchangeStack(order);              
+        //{
+        //    _orderService.PublishAnOrderExchangeStack(order);
         //    await Task.CompletedTask;
         //}
     }

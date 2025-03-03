@@ -21,28 +21,32 @@ The application will send and receive restaurant order messages and redirect the
 
 # Instalation
 
-* 1 - Clone the repository
+* Clone the repository
 ```
     git clone https://github.com/codevolper/RestaurantOrder
 ```
 
-* 2 - Restore dependencies
+* Restore dependencies
 ```
     dotnet restore
 ```
 
-* 3 - Build Docker image
+* Build Docker image
 ```
     docker build -t your-image-name .
 ```
+
+* Run docker image
 ```
     docker run -d --name your-container-name -p 8080:8080 -p 8081:8081 your-image-name
 ```
 
-* 4 - Build Rabbit
+* Build Rabbit
 ```
     docker-compose up --build
 ```
+
+* Run rabbit image
 ```
     docker run -d --hostname restaurant-order --name rabbit-server -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
